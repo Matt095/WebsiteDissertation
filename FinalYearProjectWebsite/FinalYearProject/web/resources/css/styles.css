@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 12px;
+  font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", 
+      lucida, "Helvetica CE", sans-serif;
+  background-color: white;
+}
+.container{
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+}
+
+@media screen and (max-width:1000px) {
+    .container{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.header {
+    padding: 20px;
+    text-align: left;
+}
+
+.row1 .carousel {
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+
+.slides {
+    display: none;
+    text-align: center; 
+}
+
+.dot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.row2 .column1, .column2 {
+    float: left;
+    padding: 15px;
+}
+
+.row2 .column1 {
+    width: 30%;
+}
+
+.row2 .column2 {
+    width: 70%;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row3 .link {
+    float: left;
+    width: 24.5%;
+    padding: 15px;
+}
+
+.row3:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    background-color: #286DA8;
+    position: relative;
+    width: 100%;
+    float: left;  
+}
+
+@media screen and (max-width:750px){
+    .footer {
+        text-align: center;
+    } 
+}
+.footer a {
+   margin: 10px;
+   font-size: 30px;
+}
+
+.footer h1 a {
+    text-align: center;
+    width: 12px;
+}
+
+@media screen and (max-width:750px) {
+.row2 .column1 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+.row2 .column2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+.row3 .link {
+        width: 100%;
+    }
+}
+
+.nav input[type=text] {
+    float: right;
+    border: none;
+    margin: 10px;
+    margin-right: 5px;
+    font-size: 17px;
+    width: 160px;
+}
+
+.nav button {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-left-width:0px;
+    color: #383838;
+    cursor:pointer;
+    float: right;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    height: 22px;
+    padding: 0;
+    width: 30px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+@media screen and (min-width: 541px) {
+    .nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #286DA8;
+    }
+}
+
+@media screen and (min-width: 541px) {
+    .nav li {
+        float: left;
+        border-right: 1px solid white;
+    }
+}
+
+@media screen and (min-width: 541px) {
+    .nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 541px) {
+    .nav li:nth-child(4) {
+        border-right: none;
+    }
+}
+
+.nav li a:hover:not(.active) {
+    background-color: #53a5d1;
+}
+
+.active {
+    background-color: #53a5d1;
+}
+
+@media screen and (max-width: 541px) {
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #286DA8;
+  }
+}
+
+@media screen and (max-width: 541px) {
+    .nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+}
+
+a:link, a:visited {
+  color: #ffffff;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #045491;
+  font-weight : bold;
+}
+
+.link:hover {
+    background-color: white;
+    color: #53a5d1;
+}
+
+.link {
+    background-color: #53a5d1;
+    margin: 1px;
+}
+
+.productsRow1 .column {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+.productsRow2 .column {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+.productsRow3 .column {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+.productsRow1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.productsRow2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.productsRow3:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.productsRow1 a:link {
+    color: black;
+}
+
+.productsRow2 a:link {
+    color: black;
+}
+
+.productsRow3 a:link {
+    color: black;
+}
+
+.column {
+    background-color: white;
+}
+.column:hover{
+    background-color: lightblue;
+}
+@media screen and (max-width:750px) {
+.productsRow1 .column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+.productsRow2 .column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+.productsRow3 .column {
+        width: 100%;
+    }
+}
+
+.container .loginColumn, .createAccountColumn {
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+
+.container .loginColumn {
+    width: 50%;
+    display: block;
+}
+
+.container .createAccountColumn {
+    width: 50%;
+    display: block;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:750px) {
+.container .loginColumn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+.container .createAccountColumn {
+        width: 100%;
+    }
+}
+
+.container .searchRow .results {
+    float: left;
+    padding: 15px;
+    text-align: center;  
+}
+
+.container .searchRow {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+
+.searchRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container .results {
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+
+.results:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+

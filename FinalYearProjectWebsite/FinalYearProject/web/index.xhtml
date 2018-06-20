@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Header</h1>  
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a class="active" href="index.xhtml">Home</a></li>
+                <li><a href="product.xhtml">Product</a></li>
+                <li><a href="login.xhtml">Login</a></li>
+                <a href="search.xhtml"><button type="submit"><i class="fa fa-search"></i></button></a>
+                <input type="text" placeholder="Search..."></input>
+                <a href="cart.xhtml"><button style="font-size:17px; width: 100px; margin-right: -5px;">Cart <i class="fa fa-shopping-cart"></i></button></a>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <div class="row1">
+              <div class="carousel">
+                <div class="slides">
+                   <img src="resources/images/desktop.jpg" style="width:50%"/>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="slides">
+                   <img src="resources/images/desktop2.jpg" style="width:35%"/>
+                   <p>Maecenas sit amet pretium urna.</p>
+                </div>
+              </div>
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="column1">
+                <h2>Recommended Items</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+              </div>
+              <div class="column2">
+                <h2>Top Selling Items</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis. </p>
+              </div>
+            </div>
+
+            <div class="row3">
+              <a href="product.xhtml">  
+              <div class="link">
+                <h2>Electronics</h2>
+              </div>
+              </a>
+              <a href="product.xhtml">
+              <div class="link">
+                <h2>Books</h2>
+              </div>
+              </a>
+              <a href="product.xhtml">
+              <div class="link">
+                <h2>Clothes</h2>
+              </div>
+              </a>
+              <a href="product.xhtml">
+              <div class="link">
+                <h2>Music</h2>
+              </div>
+              </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+        </div>
+
+		<!--Filter test-->
+        <h:form>
+                <f:view>
+                        <h:column>
+                            <c:forEach var="itemType" items="#{websiteBean.types}" varStatus="iter">
+                                <h:panelGrid columns="1" border="0">
+                                    <h:commandButton action="#{websiteBean.listTypes(itemType)}" value="#{itemType.itemType}"/>
+                                </h:panelGrid>
+                            </c:forEach>
+                        </h:column>
+                </f:view>
+        </h:form>
+        
+		<!--Functionality for the carousel-->
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("slides");
+              var dots = document.getElementsByClassName("dot");
+              if (n &gt; slides.length) {slideIndex = 1}    
+              if (n &lt; 1) {slideIndex = slides.length}
+              for (i = 0; i &lt; slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i &lt; dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+        </script>
+    </body>
+</html>
+
