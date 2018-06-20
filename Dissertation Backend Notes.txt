@@ -1,0 +1,4 @@
+With this project I was able to develop a mid-fidelity prototype, with limited functionality. 
+I was able to set up a simple SQL database within NetBeans but I was not able to fully incorporate into the functionality of the site.
+In the future I would like to fully integrate my database into the functionality of the site. 
+This would include a search function, lists of items and the ability to create an account and login to the site.
